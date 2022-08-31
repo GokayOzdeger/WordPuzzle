@@ -13,10 +13,10 @@ public class LevelSelectElement : MonoBehaviour
 
     private LevelConfig _config;
 
-    public void SetupElement(LevelConfig config, LevelSaveData data, bool unlocked)
+    public void SetupElement(LevelConfig config, LevelSaveData data, int levelNumber, bool unlocked)
     {
         _config = config;
-        levelNameText.text = config.LevelTitle;
+        levelNameText.text = "LVL"+levelNumber.ToString()+" "+config.LevelTitle;
         playButton.onClick.AddListener(OnClickPlay);
 
         UpdateElement(data, unlocked);

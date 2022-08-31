@@ -18,14 +18,16 @@ public class LevelSelectController : MonoGameStateListener
     private void CreateElements()
     {
         bool previousLevelCompleted = true;
+        int currentLevelNumber = 1;
         foreach (LevelConfig config in LevelManager.Instance.LevelList)
         {
             LevelSelectElement element = ObjectPooler.Instance.Spawn(listElementPrefab.name, Vector3.zero).GetComponent<LevelSelectElement>();
             levelSelectElements.Add(element);
             element.transform.SetParent(scrollRectContentRect, false);
             LevelSaveData saveData = LevelSaveData.Data(config.LevelTitle);
-            element.SetupElement(config, saveData, previousLevelCompleted);
+            element.SetupElement(config, saveData, currentLevelNumber, previousLevelCompleted);
             previousLevelCompleted = saveData.IsCompleted;
+            currentLevelNumber++;
         }
     }
 
