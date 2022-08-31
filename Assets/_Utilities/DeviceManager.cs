@@ -41,7 +41,7 @@ public class DeviceManager : ScriptableSingleton<DeviceManager>
     private void InstantiateUpdater()
     {
         GameObject updater = new GameObject("Device Manager Updater");
-        updater.AddComponent<DeviceManagerUpdate>();
+        updater.AddComponent<DeviceManagerCallbackProvider>();
         DontDestroyOnLoad(updater);
     }
 
@@ -133,32 +133,15 @@ public class DeviceManager : ScriptableSingleton<DeviceManager>
 
 }
 
-public class DeviceManagerUpdate: MonoBehaviour
+public class DeviceManagerCallbackProvider: MonoBehaviour
 {
     private DeviceManager cachedInstance;
 
     private void Awake()
     {
         cachedInstance = DeviceManager.Instance;
-#if !UNITY_EDITOR && UNITY_IOS 
-        DeviceGeneration[] lowSettingGens =
-            {
-                DeviceGeneration.iPhone6,
-                DeviceGeneration.iPhone6S,
-                DeviceGeneration.iPhone6Plus,
-                DeviceGeneration.iPhone6SPlus,
-                DeviceGeneration.iPhone7,
-                DeviceGeneration.iPhone7Plus
-    };
-        if (new List<DeviceGeneration>(lowSettingGens).Contains(Device.generation))
-        {
-            Debug.Log($"Last Quality Settings is index {QualitySettings.GetQualityLevel()}");
-            QualitySettings.SetQualityLevel(0);
-            Debug.Log($"Next Quality Settings is index {QualitySettings.GetQualityLevel()}");
-
-        }
-#endif
     }
+
     private void Update()
     {
         cachedInstance.Update();
