@@ -110,13 +110,11 @@ public class TileController
         float longestDataRectSide = Mathf.Max(_tileDataRect.width, _tileDataRect.height);
         float heightDistanceMultiplier = _tileAreaRect.height / _tileDataRect.height;
         float widthDistanceMultiplier = _tileAreaRect.width / _tileDataRect.width;
-        Debug.Log(_tileAreaRect.height + "/" + _tileDataRect.height);
-        Debug.Log(_tileAreaRect.width + "/" + _tileDataRect.width);
-        Debug.Log("H: " + heightDistanceMultiplier + " / W:" + widthDistanceMultiplier);
         TileDistanceMultiplier = Mathf.Min(heightDistanceMultiplier, widthDistanceMultiplier);
-        float maxTileDistanceMultiplier = (Screen.width / (_wordController.MaxWordLength+1)) / Settings.tileSizeMultiplier; // Maximum tiledistance multiplier allowed to make wordformer fit to screen
+
+        // Maximum tiledistance multiplier allowed to make wordformer fit to screen
+        float maxTileDistanceMultiplier = (Screen.width / (_wordController.MaxWordLength+1)) / Settings.tileSizeMultiplier;
         if (TileDistanceMultiplier > maxTileDistanceMultiplier) TileDistanceMultiplier = maxTileDistanceMultiplier;
-        Debug.Log("Distance Multiplier: " + TileDistanceMultiplier);
     }
 
     private void CalculateRectOfTileData()
