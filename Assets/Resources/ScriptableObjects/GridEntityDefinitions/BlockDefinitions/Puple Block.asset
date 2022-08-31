@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e02a92592a51084981b01e48f0fe347, type: 3}
+  m_Name: Puple Block
+  m_EditorClassIdentifier: 
+  gridEntityPrefab: {fileID: 1905907544835078951, guid: dc5bcb2e100efcc4896a74f905bb6b9d, type: 3}
+  gridEntityTypeName: Purple
+  defaultSprite: {fileID: 21300000, guid: 1f87078b8bd88574498c2af164b8edbd, type: 3}
+  onDestroyParticle: {fileID: 3708698795385311052, guid: ee86c5ce6c01b5d41b9de2ba678316a0, type: 3}
+  onDestroyAudio: {fileID: 8300000, guid: da2c044c4b0fe08429e354ec8aa9092e, type: 3}
+  entityIncludedInShuffle: 1
+  immuneToDestroyTypes: 
+  blockMatchConditions:
+  - condition: {fileID: 11400000, guid: 4e5e2688aa252f943b09f7e6a360a970, type: 2}
+    sprite: {fileID: 21300000, guid: 59c0c2bd32c29f04c9e8c927f30b2f38, type: 3}
+    entitiesToSpawnOnMatch:
+    - {fileID: 11400000, guid: 5cb32bb09f27f6f4ab89428681f45461, type: 2}
+    - {fileID: 11400000, guid: 5dba36ad7d34d1847970bfd8fb30bf63, type: 2}

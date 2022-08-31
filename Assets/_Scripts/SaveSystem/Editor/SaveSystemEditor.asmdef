@@ -1,0 +1,18 @@
+{
+    "name": "SaveSystemEditor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6d5059b8bf7519d4cba739ab86814688"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
